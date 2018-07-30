@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM  "http://dl.google.com/gwt/DTD/XHTML.ENT">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+             xmlns:res = 'urn:with:ro.gebs.myproject.client.person.viewPerson.PersonResources'>
+
+    <ui:with type = "ro.gebs.myproject.client.person.view.PersonResources" field = "res">
+    </ui:with>
+
+    <gwt:HTMLPanel>
+
+        <div align = "center">
+
+
+            <gwt:VerticalPanel res:styleName = "style.background">
+
+                <gwt:Label ui:field = "nume" res:styleName = "style.blackText" />
+                <gwt:Button ui:field = "buttonNume" text="Schimba"
+                            res:styleName = "style.schimbaButton" />
+                <gwt:Button ui:field = "buttonSterge" text="Sterge"
+                            res:styleName = "style.schimbaButton" />
+            </gwt:VerticalPanel>
+
+
+        </div>
+    </gwt:HTMLPanel>
+
+</ui:UiBinder>

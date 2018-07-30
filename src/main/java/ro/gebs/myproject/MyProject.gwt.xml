@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myproject'>
+
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.user.UserAgent' />
+
+    <!-- We need the JUnit module in the main module, -->
+    <!-- otherwise eclipse complains (Google plugin bug?) -->
+    <!-- <inherits name='com.google.gwt.junit.JUnit' /> -->
+
+    <!-- Inherit the default GWT style sheet. You can change -->
+    <!-- the theme of your GWT application by uncommenting -->
+    <!-- any one of the following lines. -->
+    <!-- <inherits name='com.google.gwt.user.theme.clean.Clean' /> -->
+    <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+    <!-- Other module inherits -->
+    <inherits name="com.google.gwt.junit.JUnit" />
+    <inherits name="com.google.gwt.i18n.I18N" />
+    <inherits name='com.google.gwt.visualization.Visualization' />
+    <inherits name="com.google.gwt.resources.Resources" />
+    <inherits name="com.google.gwt.xml.XML" />
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+    <inherits name="com.google.gwt.user.theme.dark.Dark"/>
+
+    <!-- Specify the app entry point class. -->
+    <entry-point
+            class='ro.gebs.myproject.client.start.MyProject' />
+
+    <!-- Specify the paths for translatable code -->
+    <source path='client' />
+    <source path='shared' />
+
+
+    <!-- reduces compiled JS size -->
+    <inherits
+            name="com.google.gwt.user.RemoteServiceObfuscateTypeNames" />
+
+    <!-- GWT Compiler deferred binding configuration -->
+    <!-- <set-property name="gwt.logging.enabled" value="true" /> -->
+
+    <!-- opera permutation deprecated in gwt-2.7.0; also remove it from set-property
+        value attribute -->
+    <!-- <extend-property name="user.agent" values="opera" /> -->
+
+    <set-property name="user.agent"
+                  value="gecko1_8,safari,ie9,ie10" />
+
+    <!-- reduces compiled JS size by stripping out GWT exception stack trace
+        code; possible values: strip, native, emulated -->
+
+    <set-property name="compiler.stackMode" value="strip" />
+    <!-- reduces compiled JS size by assigning minimal-length selector names -->
+    <set-configuration-property
+            name="CssResource.obfuscationPrefix" value="empty" />
+
+    <!-- use it iff you are not using enums as String values to reduce compiled
+        JS size -->
+    <!-- <set-configuration-property name="compiler.enum.obfuscate.names" value="false"
+        /> -->
+    <!-- reduces compilation time by generating only one file no matter how
+        many permutations/properties you have configured before this line; the uniquely
+        generated file is slightly bigger, but per total there is a significant decrease
+        in size -->
+    <!-- <collapse-all-properties /> -->
+    <!-- code splitting - configure initial fragments load sequence -->
+    <!-- <extend-configuration-property name="compiler.splitpoint.initial.sequence"
+        value="ro.gebs.zoniz.beacon.client.wild.login" /> -->
+
+    <set-configuration-property
+            name='xsiframe.failIfScriptTag' value='FALSE' />
+
+</module>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM file generated with GWT webAppCreator -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ro.gebs.myproject</groupId>
+    <artifactId>myproject</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1</version>
+    <name>My project name</name>
+    <licenses>
+        <license>
+            <comments>Copyright © 2018 GEBS</comments>
+            <distribution>All Rights Reserved.</distribution>
+        </license>
+    </licenses>
+    <organization>
+        <name>GEBS</name>
+        <url>http://www.gebs.ro/</url>
+    </organization>
+    <properties>
+        <!-- Convenience property to set the GWT version -->
+        <gwtVersion>2.8.2</gwtVersion>
+        <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>gebs1</id>
+            <name>Gebs repo1</name>
+            <url>http://mavenserver/maven2/repository</url>
+        </repository>
+        <repository>
+            <id>onehippo</id>
+            <name>onehippo</name>
+            <url>http://maven.onehippo.com/maven2</url>
+        </repository>
+        <repository>
+            <id>nexus</id>
+            <name>nexus</name>
+            <url>https://maven.alfresco.com/nexus/content/repositories/activiti-thirdparty</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt</artifactId>
+                <version>${gwtVersion}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.gwt.google-apis</groupId>
+            <artifactId>gwt-visualization</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-web</artifactId>-->
+            <!--<version>3.2.13.RELEASE</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.3.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.htmlcleaner</groupId>
+            <artifactId>htmlcleaner</artifactId>
+            <version>2.14</version>
+        </dependency>
+        <dependency>
+            <groupId>com.allen-sauer.gwt.dnd</groupId>
+            <artifactId>gwt-dnd</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>{project.artifactId}##${project.version}</finalName>
+        <!-- Generate compiled stuff in the folder used for developing mode -->
+        <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.p12</include>
+                    <include>**/*.css</include>
+                    <include>**/*.gss</include>
+                    <include>**/*.js</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.png</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.p12</include>
+                    <include>**/*.css</include>
+                    <include>**/*.gss</include>
+                    <include>**/*.js</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.png</include>
+                </includes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <!-- GWT Maven Plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwtVersion}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <!-- <goal>test</goal> <goal>i18n</goal> <goal>generateAsync</goal> -->
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- Plugin configuration. There are many available options, see gwt-maven-plugin
+                    documentation at codehaus.org -->
+                <!-- @bp TODO refactor, tune and do profile binding -->
+                <configuration>
+                    <extraJvmArgs>-Xms128M -Xmx2048M</extraJvmArgs>
+                    <runTarget>myproject.html</runTarget>
+                    <port>1130</port>
+                    <hostedWebapp>${webappDirectory}</hostedWebapp>
+                    <i18nMessagesBundle>ro.gebs.zoniz.beacon.client.i18n.Messages</i18nMessagesBundle>
+                    <i18nConstantsBundle>ro.gebs.zoniz.beacon.client.i18n.Constants</i18nConstantsBundle>
+                    <i18nConstantsWithLookupBundle>ro.gebs.zoniz.beacon.client.i18n.LookupConstants</i18nConstantsWithLookupBundle>
+                    <generateDirectory>src/main/java</generateDirectory>
+                    <sourceLevel>auto</sourceLevel>
+                    <!-- GWT Compiler optimization -->
+                    <!-- Ask GWT to generate a detailed SOYC (gwt:compile); set to FALSE
+                        or comment when deploying in Production Mode -->
+                    <!-- <compileReport>true</compileReport> <compilerMetrics>true</compilerMetrics>
+                        <soycDetailed>true</soycDetailed> -->
+                    <!-- reduces compiled JS size by disabling some of java.lang.Class methods:
+                        getName() -->
+                    <disableCastChecking>true</disableCastChecking>
+                    <!-- reduces compiled JS size by disabling run-time checking of cast
+                        operations -->
+                    <disableClassMetadata>true</disableClassMetadata>
+                    <!-- Set to FALSE when deploying in Production Mode -->
+                    <draftCompile>false</draftCompile>
+                    <localWorkers>8</localWorkers>
+                    <!-- use Closure Compiler to further optimize the output JS -->
+                    <!-- <closureCompiler>true</closureCompiler> -->
+                </configuration>
+            </plugin>
+            <!-- Copy project resources to the output directory -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <nonFilteredFileExtensions>
+                                <!-- default value contains jpg,jpeg,gif,bmp,png -->
+                                <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>jar</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>class</nonFilteredFileExtension>
+                            </nonFilteredFileExtensions>
+                            <outputDirectory>${webappDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- Use this in command line with mvn resources:copy-resources@copy-webapp
+                            -f pom.xml -->
+                        <id>copy-webapp</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <nonFilteredFileExtensions>
+                                <!-- default value contains jpg,jpeg,gif,bmp,png -->
+                                <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>jar</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>class</nonFilteredFileExtension>
+                            </nonFilteredFileExtensions>
+                            <outputDirectory>${webappDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/webapp</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Copy static web files before executing gwt:run -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <!-- default value contains jpg,jpeg,gif,bmp,png -->
+                        <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>jar</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>class</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                    <webappDirectory>${webappDirectory}</webappDirectory>
+                    <packagingExcludes>WEB-INF/lib/nashorn.jar</packagingExcludes>
+                </configuration>
+            </plugin>
+            <!-- Compile the sources of your project -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

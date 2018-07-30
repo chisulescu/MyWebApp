@@ -1,0 +1,66 @@
+body{
+
+pedding: 10px;
+
+}
+/*stock list hander*/
+
+.watchListHeader {
+  background-color: #2062B8;
+  color: white;
+  font-style: italic;
+}
+
+/* stock list flex table */
+.watchList {
+  border: 1px solid silver;
+  padding: 2px;
+  margin-bottom:6px;
+}
+
+
+.watchListNumericColumn {
+  text-align: right;
+  width:8em;
+}
+
+
+.watchListRemoveColumn {
+  text-align: center;
+}
+
+
+.addPanel {
+  margin: 10px 0px 15px 0px;
+}
+
+
+
+.gwt-Button-remove {
+  width: 50px;
+}
+
+
+.noChange {
+   color: black;
+   }
+
+
+.positiveChange {
+ color: green;
+ }
+
+
+.negativeChange {
+color: red;
+  }
+
+  .gwt-StackPanel { the panel itself }
+
+  .gwt-StackPanel .gwt-StackPanelItem { unselected items }
+
+  .gwt-StackPanel .gwt-StackPanelItem-selected { selected items }
+
+  .gwt-StackPanel .gwt-StackPanelContent { the wrapper around the contents of the item }
+
+

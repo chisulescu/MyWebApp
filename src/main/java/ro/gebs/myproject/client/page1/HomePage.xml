@@ -1,0 +1,54 @@
+<!DOCTYPE ui:UiBinder SYSTEM  "http://dl.google.com/gwt/DTD/XHTML.ENT">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+             xmlns:res = 'urn:with:ro.gebs.myproject.page1.HomePageResources'>
+
+    <ui:with type = "ro.gebs.myproject.client.page1.HomePageResources" field = "res">
+    </ui:with>
+
+    <gwt:HTMLPanel ui:field="homePanel">
+
+        <div align = "center">
+
+            <!--<gwt:VerticalPanel res:styleName = "style.background">-->
+            <gwt:Label text = "Bine Ati venit" res:styleName = "style.blackText" />
+            <gwt:MenuBar ui:field="menuBar">
+                <gwt:MenuItem ui:field="help">
+                    Help
+                    <gwt:MenuBar vertical="true" ui:field="Help">
+                        <gwt:MenuItem ui:field="Help1">Help1</gwt:MenuItem>
+                        <gwt:MenuItem ui:field="Help2">Help2</gwt:MenuItem>
+                        <gwt:MenuItem ui:field="Help3">Help3</gwt:MenuItem>
+                    </gwt:MenuBar>
+                </gwt:MenuItem>
+
+                <gwt:MenuItem ui:field="aboutMenuItem">About</gwt:MenuItem>
+                <gwt:MenuItem ui:field="siteMapMenuItem">Site Map</gwt:MenuItem>
+                <gwt:MenuItem ui:field="login">Login</gwt:MenuItem>
+
+            </gwt:MenuBar>
+
+            <!--<gwt:TextBox ui:field="loginBox" res:styleName = "style.box" />-->
+            <!--<gwt:Label text = "Password" res:styleName = "style.blackText" />-->
+            <!--<gwt:PasswordTextBox ui:field = "passwordBox" res:styleName = "style.box" />-->
+
+            <!--<gwt:HorizontalPanel verticalAlignment = "middle">-->
+            <!--<gwt:Button ui:field = "buttonSubmit" text="Logare"-->
+            <!--res:styleName = "style.loginButton" />-->
+
+            <!--<gwt:Button ui:field = "buttonRegister" text="Inregistrare"-->
+            <!--res:styleName = "style.regsiterButton" />-->
+
+            <!--<gwt:CheckBox ui:field = "myCheckBox" />-->
+            <!--<gwt:Label ui:field = "myLabel" text = "Remember me"-->
+            <!--res:styleName = "style.blackText" />-->
+            <!--</gwt:HorizontalPanel>-->
+
+            <!--<gwt:Label ui:field = "completionLabel1" res:styleName = "style.blackText" />-->
+            <!--<gwt:Label ui:field = "completionLabel2" res:styleName = "style.blackText" />-->
+            <!--</gwt:VerticalPanel>-->
+
+        </div>
+    </gwt:HTMLPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee">
+    <display-name>Zoniz™ Proximity</display-name>
+
+    <!-- Default page to serve -->
+    <welcome-file-list>
+        <welcome-file>myproject.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Servlets -->
+
+    <servlet>
+        <servlet-name>StockPriceService</servlet-name>
+        <servlet-class>ro.gebs.myproject.server.StockPriceServiceImpl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StockPriceService</servlet-name>
+        <url-pattern>/myproject/stockPrices</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session will expire after 60 min of inactivity -->
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+</web-app>

@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM  "http://dl.google.com/gwt/DTD/XHTML.ENT">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:gwt='urn:import:com.google.gwt.user.client.ui'
+             xmlns:res = 'urn:with:ro.gebs.myproject.client.home.view.HomeResources'>
+
+    <ui:with type = "ro.gebs.myproject.client.home.view.HomeResources" field = "res">
+    </ui:with>
+
+    <gwt:HTMLPanel>
+
+        <div align = "center">
+
+
+            <gwt:VerticalPanel res:styleName = "style.background">
+
+                <!--<gwt:Label text = "Bine Ati venit domnilor" res:styleName = "style.blackText" />-->
+                <gwt:TextBox ui:field="loginBox" res:styleName = "style.box" />
+                <gwt:Label text = "Password" res:styleName = "style.blackText" />
+                <gwt:PasswordTextBox ui:field = "passwordBox" res:styleName = "style.box" />
+
+                <gwt:HorizontalPanel verticalAlignment = "middle">
+                    <gwt:Button ui:field = "buttonSubmit" text="Logare"
+                                res:styleName = "style.loginButton" />
+
+                    <gwt:Button ui:field = "buttonRegister" text="Inregistrare"
+                                res:styleName = "style.regsiterButton" />
+
+                    <gwt:CheckBox ui:field = "myCheckBox" />
+
+                    <gwt:Label ui:field = "myLabel" text = "Remember me"
+                               res:styleName = "style.blackText" />
+                </gwt:HorizontalPanel>
+
+                <gwt:Label ui:field = "completionLabel1" res:styleName = "style.blackText" />
+                <gwt:Label ui:field = "completionLabel2" res:styleName = "style.blackText" />
+
+            </gwt:VerticalPanel>
+
+
+        </div>
+    </gwt:HTMLPanel>
+
+</ui:UiBinder>
